@@ -7,6 +7,7 @@ module.exports = {
         root: ['.'],
         alias: {
           '@constants': './src/Constants',
+          '@utils': './src/Utils',
         },
       },
     ],
