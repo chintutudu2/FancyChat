@@ -51,6 +51,7 @@
 	<array>
 		<string>SFProDisplay-Bold.ttf</string>
 		<string>SFProDisplay-Semibold.ttf</string>
+		<string>SFProDisplay-Heavy.ttf</string>
 	</array>
 </dict>
 </plist>

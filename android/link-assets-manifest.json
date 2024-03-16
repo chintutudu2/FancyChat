@@ -6,6 +6,10 @@
       "sha1": "9aa1c5063288ce095ff748f3a29f1ae97e574f44"
     },
     {
+      "path": "src/Assets/Fonts/SFProDisplay-Heavy.ttf",
+      "sha1": "83c66c34ae1c958f24622ad67c80c3d978efbc03"
+    },
+    {
       "path": "src/Assets/Fonts/SFProDisplay-Semibold.ttf",
       "sha1": "5de86bb1ae188886690e5401dcb880778d0f32cb"
     }
