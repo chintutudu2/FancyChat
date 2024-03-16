@@ -5,10 +5,14 @@
       {
         "root": ["."],
         "alias": {
+          "@assets": "./src/Assets",
+          "@components": "./src/Components",
+          "@config": "./src/Config",
           "@constants": "./src/Constants",
-          "@utils": "./src/Utils",
+          "@helpers": "./src/Helpers",
+          "@navigators": "./src/Navigators",
           "@screens": "./src/Screens",
-          "@components": "./src/Components"
+          "@utils": "./src/Utils"
         }
       }
     ]

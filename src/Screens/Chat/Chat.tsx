@@ -11,7 +11,7 @@ interface ChatData {
   birthDate: string;
 }
 
-const Chat: React.FC<ChatData> = () => {
+const Chat: React.FC = () => {
   const [users, setUsers] = useState<ChatData[]>([]);
 
   useEffect(() => {
