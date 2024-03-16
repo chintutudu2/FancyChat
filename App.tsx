@@ -1,13 +1,14 @@
 import {SafeAreaView} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {MainTab} from '@navigators/Navigators';
+import {AuthStack} from '@navigators/Navigators';
+import {navigationRef} from '@helpers/NavigatorHelper';
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <SafeAreaView style={{flex: 1}}>
-        <MainTab />
+        <AuthStack />
       </SafeAreaView>
     </NavigationContainer>
   );
