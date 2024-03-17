@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: scale(20),
     borderBlockColor: Colors.gray_40,
-    borderBottomWidth: 0.2,
+    borderBottomWidth: 0.4,
     backgroundColor: Colors.white,
   },
   avatar: {

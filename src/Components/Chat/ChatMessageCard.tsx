@@ -3,6 +3,7 @@ import React from 'react';
 import {scale} from '@utils/Scale';
 import {Colors} from '@constants/Colors';
 import {Fonts} from '@constants/Fonts';
+import {formatMessageTime} from '@utils/Time';
 
 interface ChatMessageCardProps {
   messageId: string;
@@ -36,21 +37,13 @@ const ChatMessageCard: React.FC<ChatMessageCardProps> = ({
         styles.container,
         isCurrentUser ? styles.currentUserContainer : styles.otherUserContainer,
       ]}>
-      <View style={styles.userContainer}>
-        <Image
-          source={{uri: isCurrentUser ? currentUser.avatar : otherUser.avatar}}
-          style={styles.avatar}
-        />
-        <Text style={[styles.user, !isCurrentUser ? styles.otherUser : {}]}>
-          {isCurrentUser ? currentUser.userName : otherUser.userName}
-        </Text>
-      </View>
-      <View style={styles.contentContainer}>
+      <View style={styles.messageContainer}>
         <Text
-          style={[styles.content, !isCurrentUser ? styles.otherContent : {}]}>
+          style={[styles.message, !isCurrentUser ? styles.otherMessage : {}]}>
           {content}
         </Text>
       </View>
+      <Text style={styles.time}>{formatMessageTime(timestamp)}</Text>
     </View>
   );
 };
@@ -58,9 +51,11 @@ const ChatMessageCard: React.FC<ChatMessageCardProps> = ({
 const styles = StyleSheet.create({
   container: {
     marginVertical: scale(5),
-    paddingHorizontal: scale(18),
-    paddingVertical: scale(9),
+    paddingHorizontal: scale(10),
+    paddingVertical: scale(5),
     borderRadius: scale(12),
+    minWidth: scale(80),
+    maxWidth: '80%',
   },
   currentUserContainer: {
     alignSelf: 'flex-end',
@@ -70,34 +65,22 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     backgroundColor: Colors.white,
   },
-  userContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  messageContainer: {
+    marginBottom: scale(2),
   },
-  avatar: {
-    width: scale(25),
-    height: scale(25),
-    borderRadius: scale(25),
-    marginRight: scale(5),
-  },
-  user: {
-    fontFamily: Fonts.SFProMedium,
-    fontSize: scale(16),
-    color: Colors.white,
-  },
-  otherUser: {
-    color: Colors.textColorBold,
-  },
-  contentContainer: {
-    marginTop: scale(4),
-  },
-  content: {
+  message: {
     fontFamily: Fonts.SFProRegular,
     fontSize: scale(16),
     color: Colors.white,
   },
-  otherContent: {
+  otherMessage: {
     color: Colors.textColorSemiBold,
+  },
+  time: {
+    fontFamily: Fonts.SFProRegular,
+    fontSize: scale(10),
+    color: Colors.textColorSemiBold,
+    alignSelf: 'flex-end',
   },
 });
 
