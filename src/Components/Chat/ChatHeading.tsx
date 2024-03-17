@@ -37,7 +37,7 @@ const ChatHeading: React.FC<ChatHeadingProps> = ({
         <TouchableOpacity style={styles.addContainer}>
           <Image
             source={require('@assets/Icons/add.png')}
-            style={styles.searchIcon}
+            style={styles.addIcon}
           />
         </TouchableOpacity>
       </View>
@@ -47,11 +47,10 @@ const ChatHeading: React.FC<ChatHeadingProps> = ({
 
 const styles = StyleSheet.create({
   container: {
+    height: scale(80),
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: scale(20),
-    paddingVertical: scale(10),
-    paddingTop: scale(20),
     borderBlockColor: Colors.gray_40,
     borderBottomWidth: 0.2,
     backgroundColor: Colors.white,

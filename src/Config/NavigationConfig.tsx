@@ -1,4 +1,5 @@
 import ChatHeading from '@components/Chat/ChatHeading';
+import ChatMessageHeading from '@components/Chat/ChatMessageHeading';
 import {NavRoutes} from '@constants/NavRoutes';
 import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs/src/types';
 import {NativeStackNavigationOptions} from '@react-navigation/native-stack';
@@ -10,7 +11,7 @@ export const appScreensStackOptions: Partial<
 > = {
   [NavRoutes.ChatScreen]: {
     headerShown: true,
-    header: () => <ChatHeading />,
+    header: () => <ChatMessageHeading />,
   },
 };
 
