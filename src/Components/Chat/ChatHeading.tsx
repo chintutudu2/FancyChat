@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: scale(20),
     paddingVertical: scale(10),
-    marginTop: scale(10),
+    paddingTop: scale(20),
     borderBlockColor: Colors.gray_40,
     borderBottomWidth: 0.2,
+    backgroundColor: Colors.white,
   },
   avatar: {
     width: scale(40),

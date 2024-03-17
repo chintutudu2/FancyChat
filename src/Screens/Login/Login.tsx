@@ -8,7 +8,7 @@ import {NavRoutes} from '@constants/NavRoutes';
 
 const Login: React.FC = () => {
   const onPressLogin = () => {
-    replace(NavRoutes.MainTab);
+    replace(NavRoutes.MainStack);
   };
 
   return (

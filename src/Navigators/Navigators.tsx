@@ -3,7 +3,7 @@ import {Fonts} from '@constants/Fonts';
 import {NavRoutes} from '@constants/NavRoutes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Chat, Discover, Login, Settings} from '@screens/index';
+import {Chat, ChatScreen, Discover, Login, Settings} from '@screens/index';
 import {CreateScreen, CreateTabScreen} from '@utils/NavUtils';
 import {scale} from '@utils/Scale';
 import React, {FC} from 'react';
@@ -19,7 +19,19 @@ const AuthStack: FC = () => {
         headerShown: false,
       })}>
       {CreateScreen(Stack)(NavRoutes.Login, Login)}
+      {CreateScreen(Stack)(NavRoutes.MainStack, MainStack)}
+    </Stack.Navigator>
+  );
+};
+
+const MainStack: FC = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={({route}) => ({
+        headerShown: false,
+      })}>
       {CreateScreen(Stack)(NavRoutes.MainTab, MainTab)}
+      {CreateScreen(Stack)(NavRoutes.ChatScreen, ChatScreen)}
     </Stack.Navigator>
   );
 };
@@ -33,15 +45,15 @@ const MainTab: FC = () => {
         tabBarLabelPosition: 'beside-icon',
         tabBarIcon: ({focused, size}) => {
           let iconName;
-          if (route.name === 'Chat') {
+          if (route.name === NavRoutes.Chat) {
             iconName = focused
               ? require('@assets/Icons/chat.png')
               : require('@assets/Icons/chat_unfocused.png');
-          } else if (route.name === 'Settings') {
+          } else if (route.name === NavRoutes.Settings) {
             iconName = focused
               ? require('@assets/Icons/settings.png')
               : require('@assets/Icons/settings_unfocused.png');
-          } else if (route.name === 'Discover') {
+          } else if (route.name === NavRoutes.Discover) {
             iconName = focused
               ? require('@assets/Icons/discover.png')
               : require('@assets/Icons/discover_unfocused.png');

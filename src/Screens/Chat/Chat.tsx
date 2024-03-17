@@ -2,6 +2,7 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {ChatCard} from '@components/index';
 import {scale} from '@utils/Scale';
+import {Colors} from '@constants/Colors';
 
 interface ChatData {
   id: string;
@@ -40,6 +41,7 @@ const Chat: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: Colors.white,
     paddingHorizontal: scale(5),
   },
 });

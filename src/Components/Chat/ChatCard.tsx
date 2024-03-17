@@ -1,8 +1,10 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Fonts} from '@constants/Fonts';
 import {Colors} from '@constants/Colors';
 import {scale} from '@utils/Scale';
+import {push} from '@helpers/NavigatorHelper';
+import {NavRoutes} from '@constants/NavRoutes';
 
 interface ChatCardProps {
   profilePic: string;
@@ -17,8 +19,12 @@ const ChatCard: React.FC<ChatCardProps> = ({
   message = 'Got it',
   time = 'December, 2019',
 }) => {
+  const onPressChatCard = () => {
+    push(NavRoutes.ChatScreen);
+  };
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPressChatCard}>
       <Image source={{uri: profilePic}} style={styles.avatar} />
       <View style={styles.messageContainer}>
         <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
@@ -31,7 +37,7 @@ const ChatCard: React.FC<ChatCardProps> = ({
       <View>
         <Text style={styles.time}>{time}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
